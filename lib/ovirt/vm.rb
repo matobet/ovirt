@@ -274,8 +274,9 @@ module Ovirt
       parse_first_node(node, :placement_policy, hash,
                        :node => [:affinity])
 
-      parse_first_node_with_hash(node, 'placement_policy/host', hash[:placement_policy][:host] = {},
-                                 :attribute => [:id])
+      # hash[:placement_policy] ||= {}
+      # parse_first_node_with_hash(node, 'placement_policy/host', hash[:placement_policy][:host] = {},
+      #                            :attribute => [:id])
 
       parse_first_node(node, :memory_policy, hash,
                        :node_to_i => [:guaranteed])
